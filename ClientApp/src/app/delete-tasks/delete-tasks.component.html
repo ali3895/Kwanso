@@ -1,0 +1,21 @@
+<h1 id="tableLabel">Tasks</h1>
+
+<p *ngIf="!tasks"><em>Loading...</em></p>
+
+<div class="container-fluid">
+
+  <form [formGroup]="taskForm">
+    <div class="row" style="margin:2em">
+      <button class="btn-primary" style="float:right" (click)="onBtnClick()">Delete Task</button>
+    </div>
+
+    <div *ngIf="tasks">
+      <div class="card" *ngFor="let t of tasks; let i=index">
+        <div class="card-body">
+          <input type="checkbox" formControlName="isChecked" (change)="checkAllCheckBox($event, t)">
+          {{ t.name }}
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

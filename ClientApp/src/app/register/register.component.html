@@ -1,0 +1,14 @@
+<h1>Register</h1>
+
+<form [formGroup]="loginForm">
+  <label>Email</label>
+  <input type="email" class="box-shadow" placeholder="abc@xyz.com" formControlName="email"/>
+
+  <label>Password</label>
+  <input type="password" class="box-shadow" formControlName="password"/>
+
+  <button class="btn btn-primary" (click)="login_OnClick()">Sign Up</button>
+
+  <div *ngIf="duplicateUser" >User already exists</div>
+</form>
+

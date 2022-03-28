@@ -1,0 +1,9 @@
+<h1>Add a Task</h1>
+
+<label>Task Name</label>
+<form [formGroup]="taskForm">
+  <input type="text" class="box-shadow" placeholder="Task Name" formControlName="taskName"/>
+
+  <button class="btn btn-primary" (click)="addTask_OnClick()">Save</button>
+</form>
+

@@ -1,0 +1,19 @@
+<h1 id="tableLabel">Tasks</h1>
+
+<p *ngIf="!tasks"><em>Loading...</em></p>
+
+<div class="container-fluid">
+  <div class="row" style="margin:2em">
+    <button class="btn-primary" style="float:right" (click)="onBtnClick()">Add Task</button>
+  </div>
+  <div class="row" style="margin:2em">
+    <button class="btn-primary" style="float:right" (click)="onDeleteClick()">Delete Tasks</button>
+  </div>
+
+  <div *ngIf="tasks">
+    <div class="card" *ngFor="let t of tasks">
+      <div class="card-body">{{ t.name }}</div>
+
+    </div>
+  </div>
+</div>
